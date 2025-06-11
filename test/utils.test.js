@@ -25,12 +25,11 @@ test('', () => {
     3: [-1, 1],
   };
   const shape = BuildingShapeUtils.createShape(xmlData, nodelist);
-  expect(shape.extractPoints().shape.length).toBe(4);
+  expect(shape.extractPoints().shape.length).toBe(3);
   const points = shape.extractPoints().shape;
   expect([points[0].x, points[0].y]).toStrictEqual(nodelist[1]);
   expect([points[1].x, points[1].y]).toStrictEqual(nodelist[2]);
   expect([points[2].x, points[2].y]).toStrictEqual(nodelist[3]);
-  expect([points[0].x, points[0].y]).toStrictEqual(nodelist[1]);
 });
 
 /** Test isClosed */
@@ -116,13 +115,17 @@ const rightTriangle = new Shape();
 rightTriangle.moveTo(1, 1);
 rightTriangle.lineTo(1, -1);
 rightTriangle.lineTo(-1, 1);
-rightTriangle.lineTo(1, 1);
 
 const rightTriangle2 = new Shape();
 rightTriangle2.moveTo(1, 1);
 rightTriangle2.lineTo(-1, 1);
 rightTriangle2.lineTo(1, -1);
-rightTriangle2.lineTo(1, 1);
+
+const rectangle = new Shape();
+rectangle.moveTo(-4.332738077015795, -5.882209888874915);
+rectangle.lineTo(-4.332738077015795, 5.88221335051411);
+rectangle.lineTo(4.332747472106493, 5.88221335051411);
+rectangle.lineTo(4.332747472106493, -5.882209888874915);
 
 const rectangle = new Shape();
 rectangle.moveTo(-4.332738077015795, -5.882209888874915);
