@@ -95,6 +95,6 @@ test('Diagnose Skillion Issue', async() => {
   const building = new Building('201181659', innerData);
   expect(building.id).toBe('201181659');
   const urlBase = 'https://api.openstreetmap.org/api/0.6/';
-  expect(global.fetch.mock.calls[0][0]).toBe(urlBase + 'relation/42/full');
+  expect(global.fetch.mock.calls[0][0]).toBe(urlBase + 'way/201181659/full');
   expect(global.fetch.mock.calls[1][0]).toBe(urlBase + 'map?bbox=30.4980057,59.9380365,30.4993839,59.9385087');
 });
